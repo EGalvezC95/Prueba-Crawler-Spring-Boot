@@ -63,6 +63,14 @@ mvn spring-boot:run
 
 http://localhost:8080
 
+Links de prueba:
+
+Mercadolibre:https://www.mercadolibre.com.ar/sierra-circular-7-14-185-190mm-1600w-hs7010-makita/p/MLA19813486
+
+Paris:https://www.paris.cl/tecnologia/celulares/smartphone/
+
+Falabella:https://www.falabella.com/falabella-cl/category/cat40052/Computadores?mkid=CP_MC1_CON_688&page=1
+
 Capturas de pantalla
 Login
 
