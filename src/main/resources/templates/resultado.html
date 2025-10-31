@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Resultados</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+<div class="max-w-5xl mx-auto mt-10 p-6 bg-white rounded-2xl shadow">
+  <h1 class="text-3xl font-bold mb-8 text-center text-gray-800">Productos Extraídos</h1>
+
+  <div th:if="${productos.size() == 0}" class="text-center text-gray-500 text-lg">
+    No se encontraron productos.
+  </div>
+
+  <div th:each="producto, prodStat : ${productos}" class="mb-10 border-b pb-6">
+    <!-- Fila de especificaciones -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+      <div>
+        <h2 class="font-bold text-lg" th:text="${producto.nombre}">Nombre</h2>
+      </div>
+      <div><strong>SKU:</strong> <span th:text="${producto.sku}">SKU</span></div>
+      <div><strong>Precio Actual:</strong> $<span th:text="${producto.precioActual}">0.0</span></div>
+      <div th:if="${producto.precioAnterior != null}">
+        <strong>Precio Anterior:</strong> $<span th:text="${producto.precioAnterior}">0.0</span>
+      </div>
+      <div class="col-span-full"><strong>Disponibilidad:</strong> <span th:text="${producto.disponibilidad}">Disponible</span></div>
+    </div>
+
+    <!-- Carrusel de imágenes -->
+    <div class="relative w-full flex items-center justify-center mt-2">
+      <button th:onclick="'prevImage(' + ${prodStat.index} + ')'"
+              class="absolute left-0 bg-white bg-opacity-70 rounded-full p-1 hover:bg-opacity-100 shadow">
+        &#8592;
+      </button>
+
+      <div class="overflow-hidden w-40 h-40 flex justify-center items-center">
+        <img th:each="img, imgStat : ${producto.imagenes}"
+             th:src="${img}"
+             class="w-40 h-40 object-cover rounded carousel-img-${prodStat.index}"
+             th:classappend="${imgStat.index != 0}? 'hidden' : ''">
+      </div>
+
+      <button th:onclick="'nextImage(' + ${prodStat.index} + ')'"
+              class="absolute right-0 bg-white bg-opacity-70 rounded-full p-1 hover:bg-opacity-100 shadow">
+        &#8594;
+      </button>
+    </div>
+  </div>
+
+  <a href="/" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Volver</a>
+</div>
+
+<script>
+  // JavaScript para carrusel simple
+  const carousels = [];
+
+  // Inicializar carruseles
+  document.querySelectorAll('[class*="carousel-img-"]').forEach(img => {
+    const idx = img.className.match(/carousel-img-(\d+)/)[1];
+    if(!carousels[idx]) carousels[idx] = [];
+    carousels[idx].push(img);
+  });
+
+  function showImage(carouselIndex, imgIndex) {
+    carousels[carouselIndex].forEach((img, i) => {
+      img.classList.toggle('hidden', i !== imgIndex);
+    });
+    carousels[carouselIndex].current = imgIndex;
+  }
+
+  function nextImage(carouselIndex) {
+    const current = carousels[carouselIndex].current ?? 0;
+    const next = (current + 1) % carousels[carouselIndex].length;
+    showImage(carouselIndex, next);
+  }
+
+  function prevImage(carouselIndex) {
+    const current = carousels[carouselIndex].current ?? 0;
+    const prev = (current - 1 + carousels[carouselIndex].length) % carousels[carouselIndex].length;
+    showImage(carouselIndex, prev);
+  }
+
+  // Inicializar todas a la primera imagen
+  carousels.forEach((_, i) => showImage(i, 0));
+</script>
+</body>
+</html>

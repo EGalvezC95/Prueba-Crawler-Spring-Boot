@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Crawler de Productos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-purple-600 to-blue-500 min-h-screen flex items-center justify-center">
+<div class="max-w-lg w-full bg-white rounded-2xl shadow-2xl p-8">
+  <h1 class="text-3xl font-bold mb-6 text-center text-gray-800">Crawler de Productos</h1>
+
+  <!-- Mensaje de error -->
+  <div class="mb-4 text-red-500 text-center" id="errorMsg">
+    <span></span>
+  </div>
+
+  <form action="/extraer" method="post" class="flex flex-col gap-4">
+    <input type="text" name="url" placeholder="Ingresa la URL de la categoría o producto"
+           class="border border-gray-300 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition" required>
+    <button type="submit"
+            class="bg-blue-500 text-white py-3 rounded-xl font-semibold hover:bg-blue-600 transform hover:-translate-y-1 transition">
+      Extraer
+    </button>
+  </form>
+
+  <p class="mt-6 text-center text-gray-500 text-sm">
+    Herramienta para extraer información de productos de manera rápida y sencilla.
+  </p>
+</div>
+</body>
+</html>
