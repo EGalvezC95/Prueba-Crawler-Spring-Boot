@@ -30,7 +30,7 @@ El proyecto está desarrollado con **Spring Boot**, **Thymeleaf**, **Tailwind CS
 
 ### Ejemplo XAMPP:
 
-![XAMPP](docs/images/xampp.png)
+<img width="667" height="436" alt="Image" src="https://github.com/user-attachments/assets/4d08bed3-a2fd-49d1-b4b4-fbaed4f0dd93" />
 
 ---
 
