@@ -66,19 +66,19 @@ http://localhost:8080
 Capturas de pantalla
 Login
 
-[![Login](docs/images/login.png)](docs/images/login.png)
+<img width="1358" height="630" alt="Image" src="https://github.com/user-attachments/assets/ef2031c2-84b9-4d91-888b-66e7ac2bb695" />
 
 Registro
 
-[![Registro](docs/images/registro.png)](docs/images/registro.png)
+<img width="1347" height="637" alt="Image" src="https://github.com/user-attachments/assets/1ff2081b-1754-4d09-a49f-c33a1a115002" />
 
 Pantalla principal
 
-[![Principal](docs/images/principal.png)](docs/images/principal.png)
+<img width="1353" height="636" alt="Image" src="https://github.com/user-attachments/assets/f97f7952-140f-4607-8673-a71404b2914c" />
 
 Lista de productos extraídos
 
-[![Lista](docs/images/lista.png)](docs/images/lista.png)
+<img width="1357" height="652" alt="Image" src="https://github.com/user-attachments/assets/e590fed9-8ec9-4c5b-a1ff-f23d12663693" />
 
 Funcionalidades
 
