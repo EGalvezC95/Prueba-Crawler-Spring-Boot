@@ -30,7 +30,7 @@ El proyecto está desarrollado con **Spring Boot**, **Thymeleaf**, **Tailwind CS
 
 ### Ejemplo XAMPP:
 
-[![XAMPP](docs/images/xampp.png)](docs/images/xampp.png)
+![XAMPP](docs/images/xampp.png)
 
 ---
 
@@ -83,20 +83,31 @@ Lista de productos extraídos
 Funcionalidades
 
 Registro y login de usuarios.
+
 Extracción de productos desde URLs.
+
 Guardado automático en MySQL.
+
 Seguridad básica con Spring Security.
 
 Tecnologías utilizadas
 
 Java 17
+
 Spring Boot 3
+
 Spring Security
+
 Thymeleaf
+
 JSoup
+
 Tailwind CSS
+
 MySQL
+
 Maven
 
 Autor
+
 Eduardo Gálvez
